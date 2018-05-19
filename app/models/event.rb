@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
-    validates_presence_of :title
-    validates_presence_of :description
-    validates_presence_of :date
-    validates_presence_of :venue_id
-    belongs_to :venue
+  validates :title, :presence => true
+  validates :description, :presence => true
+  validates :date, :presence => true
+
+  belongs_to :venue
 end

@@ -1,6 +1,6 @@
 class Venue < ApplicationRecord
-  validates_presence_of :name, uniqueness: true
-  validates_presence_of :location
-  validates_presence_of :email
+  validates :name, :presence => true
+  validates :location, :presence => true
+  validates :email, :presence => true
   has_many :events
 end
