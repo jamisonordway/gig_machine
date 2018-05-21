@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
+
   resources :dashboard, only: :index
   resources :events, only: :index
+  resources :users, only: [:new, :show, :index, :create]
   resources :venues, shallow: true do
     resources :events
   end
