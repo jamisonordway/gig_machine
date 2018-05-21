@@ -1,0 +1,47 @@
+require 'rails_helper'
+
+describe 'Logged in Admin' do
+  context 'they visit new event path' do
+    it 'should show a form for a new event' do
+    visit new_event_path
+
+    expect(page).to have_field('Title')
+    expect(page).to have_field('Description')
+    expect(page).to have_field('Date')
+    end
+  end
+  context 'they submit a form for a new event' do
+    it 'should save the new event' do
+    visit new_event_path
+    title = "cool show"
+    description = 'dont miss it'
+    date = '06/06/06'
+
+    fill_in :Title, with: title
+    fill_in :Description, with: description
+    fill_in :Date, with: date
+    click_on 'Create Event'
+    expect(current_path).to eq(events_path)
+    expect(page).to have_content(title)
+    expect(page).to have_content(description)
+    expect(page).to have_content(date)
+    end
+  end
+  context 'they visit edit event path' do
+    it 'should show a form for editing the relevant event' do
+    venue = Venue.create(name: 'Yerberia Cultura', location: 'McAllen', email: 'playhere@mcallen.com')
+    event = Event.create(title: 'Local music fest', description: 'Everyone in McAllen', date: '07/04/2015')
+    new_title = 'New Title'
+    new_description = 'New Description'
+    new_date = '09/09/09'
+    visit edit_event_path(event)
+
+    fill_in :Title, with: new_title
+    fill_in :Description, with: new_description
+    fill_in :Date, with: new_date
+    click_on 'Update Event'
+    expect(current_path).to eq(events_path)
+    expect(page).to have_content()
+    end
+  end
+end
