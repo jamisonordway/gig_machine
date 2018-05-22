@@ -9,6 +9,10 @@ class Admin::VenuesController < Admin::BaseController
     @venue = Venue.new
   end
 
+  def show
+    @venue = Venue.find(params[:id])
+  end
+
   def edit
     @venue = Venue.find(params[:id])
   end
@@ -26,10 +30,6 @@ class Admin::VenuesController < Admin::BaseController
   def create
     Venue.create(venue_params)
     redirect_to venues_path
-  end
-
-  def show
-    @venue = Venue.find(params[:id])
   end
 
   private

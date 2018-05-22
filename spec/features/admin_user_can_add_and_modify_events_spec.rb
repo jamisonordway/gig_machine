@@ -3,9 +3,14 @@ require 'rails_helper'
 describe 'Logged in Admin' do
   context 'they visit a venue show page' do
     it 'should have a link to create a new event for that venue' do
+    admin = User.create(username: 'thing', password: 'pw', role: 1)
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
     venue = Venue.create(name: 'Guaranty Bank', location: 'Denver', email: 'donotplayhere@bank.com')
 
-    visit venue_path(venue)
+    visit admin_venue_path(venue)
+  
     expect(page).to have_link("Add a new event for #{venue.name}")
     end
   end

@@ -6,8 +6,8 @@ describe 'Visitor' do
 
     expect(page).to have_link('Log in')
     expect(page).to have_link('Sign up')
-    expect(page).to have_link('Gig Machine Dashboard')
   end
+  
   scenario 'they visit the dashboard' do
     venue = Venue.create!(name: 'The Prelude', location: 'Harlingen', email: 'Angel@music.com')
     event = venue.events.create(title: 'Songwriters in the Round', description: 'we will sing each others songs', date: '12/12/16')

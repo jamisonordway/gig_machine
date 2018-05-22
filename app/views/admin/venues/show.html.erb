@@ -4,3 +4,5 @@
   <%= @venue.location %><br>
   <% @venue.email %>
 </section>
+
+<p><%= link_to "Add a new event for #{@venue.name}", new_admin_venue_event_path(@venue) %></p>
