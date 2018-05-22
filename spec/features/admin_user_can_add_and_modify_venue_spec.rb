@@ -17,7 +17,7 @@ describe 'User visits the venues index' do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-    visit new_venue_path
+    visit new_admin_venue_path
 
     expect(page).to have_field('Name')
     expect(page).to have_field('Location')
@@ -30,7 +30,7 @@ describe 'User visits the venues index' do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-    visit new_venue_path
+    visit new_admin_venue_path
 
     fill_in :Name, with: 'New Venue'
     fill_in :Location, with: 'Here'
@@ -46,7 +46,7 @@ describe 'User visits the venues index' do
     admin = User.create(username: 'Jamison', password: 'admin', role: 1)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-    visit edit_venue_path(venue)
+    visit edit_admin_venue_path(venue)
 
     expect(page).to have_field('Name')
     expect(page).to have_field('Location')
@@ -55,8 +55,22 @@ describe 'User visits the venues index' do
 
     fill_in :Name, with: 'Updated Name'
     click_on 'Update Venue'
-    expect(current_path).to eq(venues_path)
+    
+    expect(current_path).to eq(venue_path(venue))
     expect(page).to have_content('Updated Name')
+    end
+  end
+  context 'As an artist user' do
+    describe 'they navigate to venues index' do
+      it 'does not show a link to create a venue' do
+      artist = User.create(username: 'FlyLo', password: 'brainfeeder', role: 0)
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(artist)
+
+      visit admin_venues_path
+      expect(page).to_not have_content('Add a new venue')
+      expect(page).to have_content("The page you were looking for doesn't exist")
+     end
     end
   end
 end

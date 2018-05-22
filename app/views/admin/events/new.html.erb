@@ -1,4 +1,4 @@
-<%= form_for [@venue, @event] do |f| %>
+<%= form_for [:admin, @venue, @event] do |f| %>
 <%= f.label :title %>
 <%= f.text_field :title %>
 <%= f.label :description %>
