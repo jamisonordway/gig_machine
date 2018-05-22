@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   resources :events, only: :index
   resources :users, only: [:new, :show, :index, :create]
   resources :venues, shallow: true do
-    resources :events
+    resources :events, only: [:new, :edit, :show, :create, :destroy]
   end
 end
