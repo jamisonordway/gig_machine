@@ -1,11 +1,8 @@
 
 <% if current_user %>
 <h1> Welcome, <%= current_user.username %>! </h1>
-<%= link_to 'Log out', logout_path %>
+
 <% else %>
 <h1>You aren't logged in. </h1>
 <%= link_to 'Log in', login_path %>
 <% end %>
-
-<p><%= link_to 'Click here to see all venues', venues_path %></p>
-<p><%= link_to 'Click here to see all events', events_path %></p>

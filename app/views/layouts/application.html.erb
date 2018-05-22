@@ -7,6 +7,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= link_to 'Dashboard', dashboard_index_path %>
+    <%= link_to 'All Venues', venues_path %>
+    <%= link_to 'All Events', events_path %>
+    <% if current_user %>
+    <%= link_to 'Log out', logout_path %>
+    <% else %>
+    <%= link_to 'Log in', login_path %>
+    <% end %>
   </head>
 
   <body>

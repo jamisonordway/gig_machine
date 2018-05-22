@@ -7,12 +7,13 @@ describe 'Visitor' do
       password = 'keepthefear'
       user = User.create!(username: username, password: password)
       visit '/'
+      
       click_on 'Log in'
       expect(current_path).to eq(login_path)
 
       fill_in :username, with: username
       fill_in :password, with: password
-      click_on 'Log in'
+      click_on 'Log In'
       expect(current_path).to eq(user_path(user))
       expect(page).to have_link('Log out')
     end

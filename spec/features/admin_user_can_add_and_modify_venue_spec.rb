@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 describe 'Logged in Admin' do
+  context 'they visit the venues index' do
+    it 'should have a link to add a new venue' do
+      visit venues_path
+      expect(page).to have_link('Add a new venue')
+    end
+  end
   context 'they visit new venue path' do
     it 'should show a form for a new venue' do
     visit new_venue_path
