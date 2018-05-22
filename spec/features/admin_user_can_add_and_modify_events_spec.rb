@@ -3,8 +3,11 @@ require 'rails_helper'
 describe 'Logged in Admin' do
   context 'they visit new event path' do
     it 'should show a form for a new event' do
-    venue = Venue.create(name: 'Turing Basement', location: 'Denver', email: 'turing@concerts.com')
+
+    venue = Venue.create!(name: 'Turing Basement', location: 'Denver', email: 'turing@concerts.com')
+
     visit new_venue_event_path(venue)
+
 
     expect(page).to have_field('Title')
     expect(page).to have_field('Description')
@@ -13,7 +16,7 @@ describe 'Logged in Admin' do
   end
   context 'they submit a form for a new event' do
     it 'should save the new event' do
-        venue = Venue.create(name: 'Turing Basement', location: 'Denver', email: 'turing@concerts.com')
+        venue = Venue.create!(name: 'Turing Basement', location: 'Denver', email: 'turing@concerts.com')
 
     visit new_venue_event_path(venue)
     title = "cool show"
@@ -24,7 +27,7 @@ describe 'Logged in Admin' do
     fill_in :Description, with: description
     fill_in :Date, with: date
     click_on 'Create Event'
-    expect(current_path).to eq(events_path)
+    expect(current_path).to eq(event_path(Event.last))
     expect(page).to have_content(title)
     expect(page).to have_content(description)
     expect(page).to have_content(date)
@@ -39,7 +42,8 @@ describe 'Logged in Admin' do
     new_description = 'New Description'
     new_date = '09/09/09'
 
-    visit edit_event_path(event)
+    #visit edit_venue_event_path(venue)
+    visit edit_venue_event_path(venue, event)
 
     fill_in :Title, with: new_title
     fill_in :Description, with: new_description
