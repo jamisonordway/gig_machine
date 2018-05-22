@@ -11,4 +11,10 @@ Rails.application.routes.draw do
   resources :venues do
     resources :events
   end
+
+  namespace :admin do
+    resources :venues
+    resources :events
+    resources :artists, only: [:edit, :destroy]
+  end
 end

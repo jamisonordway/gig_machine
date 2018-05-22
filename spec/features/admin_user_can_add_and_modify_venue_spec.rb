@@ -1,14 +1,22 @@
 require 'rails_helper'
 
-describe 'Logged in Admin' do
-  context 'they visit the venues index' do
-    it 'should have a link to add a new venue' do
-      visit venues_path
+describe 'User visits the venues index' do
+  context 'As admin' do
+    it 'allows admin to see new venue link' do
+      admin = User.create(username: 'Jamison', password: 'admin', role: 1)
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+      visit admin_venues_path
+
       expect(page).to have_link('Add a new venue')
     end
   end
-  context 'they visit new venue path' do
     it 'should show a form for a new venue' do
+      admin = User.create(username: 'Jamison', password: 'admin', role: 1)
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
     visit new_venue_path
 
     expect(page).to have_field('Name')
@@ -16,9 +24,12 @@ describe 'Logged in Admin' do
     expect(page).to have_field('Email')
     expect(page).to have_button('Create Venue')
     end
-  end
-  context 'they submit a form for a new venue' do
+  describe 'they submit a form for a new venue' do
     it 'should save the new venue' do
+      admin = User.create(username: 'Jamison', password: 'admin', role: 1)
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
     visit new_venue_path
 
     fill_in :Name, with: 'New Venue'
@@ -31,6 +42,9 @@ describe 'Logged in Admin' do
   context 'they visit edit venue path' do
     it 'should show a form for editing the relevant venue' do
     venue = Venue.create(name: 'Yerberia Cultura', location: 'McAllen', email: 'playhere@mcallen.com')
+
+    admin = User.create(username: 'Jamison', password: 'admin', role: 1)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
     visit edit_venue_path(venue)
 
