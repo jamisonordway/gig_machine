@@ -23,7 +23,7 @@ describe 'Logged in Admin' do
 
       artist = Artist.create(name: 'Janelle Monae', bio: 'pan sci fi queen', link: 'janellemonae.com', img: 'url')
 
-      visit admin_artist_path(artist)
+      visit(admin_artist_path(artist))
 
       expect(page).to have_link("Edit #{artist.name}")
     end

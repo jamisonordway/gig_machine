@@ -3,4 +3,8 @@
   <%= @artist.bio %>
   <%= @artist.link %>
   <%= @artist.img %>
-</section
+</section>
+
+<% if current_user && current_user.id == @artist.user_id %>
+<%= link_to "Edit Artist Profile", edit_artist_path(@artist) %>
+<% end %>
