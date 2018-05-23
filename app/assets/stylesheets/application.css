@@ -24,6 +24,8 @@ body {
   margin: 0;
   background-color: #55466A;
   font-family: 'Wire One', sans-serif;
+  grid-template-columns: 1 / 5;
+  grid-template-rows: 1 / 2;
 }
 
 header {
@@ -49,4 +51,12 @@ nav {
 .right-align {
   justify-content: flex-end;
   padding-right: 2rem;
+}
+
+section {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  
 }
