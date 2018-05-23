@@ -3,4 +3,8 @@
   <%= @event.description %><br>
   <%= @event.date %>
   <p> Venue: <%= @event.venue.name %></p>
+
+  <% @event_artists.each do |event_artist| %>
+    <h1>Featured Artists: <%= link_to "#{artist.name}" %></h2>
+  <% end  %>
 </section>

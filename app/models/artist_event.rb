@@ -1,3 +1,0 @@
-class ArtistEvent < ApplicationRecord
-
-end

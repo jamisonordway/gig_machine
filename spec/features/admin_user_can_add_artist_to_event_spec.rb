@@ -22,11 +22,13 @@ describe 'Logged in Admin' do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-      visit new_admin_artist_artist_event_path(artist)
-      save_and_open_page
+      visit new_admin_artist_artists_event_path(artist)
+
       select "#{event.title}", from: :event_id, visible: false
       click_on "Add to Event"
       expect(current_path).to eq(event_path(event))
+      expect(page).to have_content("Featured Artists: #{artist.name}")
+      expect(page).to have_link("#{artist.name}")
     end
   end
 end

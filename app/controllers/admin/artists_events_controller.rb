@@ -1,9 +1,9 @@
-class Admin::ArtistEventsController < Admin::BaseController
+class Admin::ArtistsEventsController < Admin::BaseController
 
   def new
     @artist = Artist.find(params[:artist_id])
     @events = Event.all
-    @artist_event = ArtistEvent.new
+    @artists_event = ArtistsEvent.new
   end
 
   def create
@@ -14,5 +14,9 @@ class Admin::ArtistEventsController < Admin::BaseController
     else
       render :new
     end
+  end
+
+  def show
+    @artist_events = ArtistEvent.all
   end
 end
