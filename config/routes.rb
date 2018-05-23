@@ -17,6 +17,6 @@ Rails.application.routes.draw do
     resources :venues do
       resources :events, only: [:new, :create, :edit, :update, :destroy]
     end
-    resources :artists, only: [:edit, :destroy]
+    resources :artists, only: [:new, :create, :show, :edit, :update, :destroy]
   end
 end
