@@ -1,9 +1,18 @@
 <h1>All venues</h1>
 
-<section>
-<% @venues.each do |venue| %>
-<ul><%= link_to "#{venue.name}", venue_path(venue) %></ul>
-<% end %>
-</section>
+<% if current_user && current_user.admin? %>
+  <section>
+  <% @venues.each do |venue| %>
+  <ul><%= link_to "#{venue.name}", admin_venue_path(venue) %></ul>
+  <% end %>
+  </section>
+<% else %>
+  <section>
+  <% @venues.each do |venue| %>
+  <ul><%= link_to "#{venue.name}", admin_venue_path(venue) %></ul>
+  <% end %>
+  </section>
+  <% end %>
+
 
 <h2><%= link_to "Add a new venue", new_admin_venue_path %></h2>
