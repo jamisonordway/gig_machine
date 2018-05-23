@@ -21,7 +21,6 @@ describe 'Logged in Admin' do
 
       visit new_admin_artists_event_path(artist)
 
-      select 'Yerberia Cultura', from: 'venues'
     end
   end
 end

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :venues do
-      resources :events, only: [:new, :create, :edit, :update, :destroy]
+      resources :events
     end
     resources :artists
     resources :artists_events
