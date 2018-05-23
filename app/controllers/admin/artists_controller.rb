@@ -18,7 +18,7 @@ class Admin::ArtistsController < Admin::BaseController
     if @artist.save
       redirect_to artists_path
     else
-      render :edit
+      render :new
     end
   end
 
