@@ -8,3 +8,7 @@
 <% if current_user && current_user.id == @artist.user_id %>
 <%= link_to "Edit Artist Profile", edit_artist_path(@artist) %>
 <% end %>
+<% if current_admin? %>
+<p><%=link_to "Edit #{@artist.name}", edit_admin_artist_path %></p>
+<p><%= link_to "Add #{@artist.name} to an event", new_admin_artist_artist_event_path(@artist) %>
+  <% end %>
