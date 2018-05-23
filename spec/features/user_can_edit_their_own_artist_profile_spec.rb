@@ -16,8 +16,8 @@ describe 'Logged in user' do
 
       fill_in 'Bio', with: 'sapphic acoustic pop'
       click_on 'Update Artist'
-      #binding.pry
-      expect(page).to eq(artists_path)
+
+      expect(current_path).to eq(artist_path(artist))
       expect(page).to have_content('sapphic acoustic pop')
     end
   end

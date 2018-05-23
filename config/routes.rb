@@ -19,5 +19,6 @@ Rails.application.routes.draw do
       resources :events, only: [:new, :create, :edit, :update, :destroy]
     end
     resources :artists
+    resources :artists_events
   end
 end
