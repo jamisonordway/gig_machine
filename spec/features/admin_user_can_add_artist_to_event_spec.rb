@@ -15,12 +15,14 @@ describe 'Logged in Admin' do
   context 'they add an artist to an event' do
     it 'should display artist on event page as a link to artist profile' do
       admin = User.create(username: 'dirtycomputer', password: 'pynk', role: 1)
+      venue = Venue.create(name: 'the prelude', location: 'here', email: 'dkfjlakdj@prelude.com')
+      event = Event.create!(title: 'thing', description: 'thing', date: '01/01/01', venue_id: venue.id)
       artist = Artist.create(name: 'Gojira', bio: 'black honey', link: 'gojira.listen', img: 'img', user_id: 666)
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-      visit new_admin_artists_event_path(artist)
-
+      visit new_admin_artist_artist_event_path(artist)
+      save_and_open_page
     end
   end
 end

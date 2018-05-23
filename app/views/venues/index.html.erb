@@ -1,5 +1,9 @@
 <h1>All venues</h1>
 
+<% if current_admin? %>
+<h2><%= link_to "Add a new venue", new_admin_venue_path %></h2>
+<% end %>
+
 <section>
   <% @venues.each do |venue| %>
   <ul><%= link_to "#{venue.name}", venue_path(venue) %></ul>

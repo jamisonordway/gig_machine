@@ -18,7 +18,8 @@ Rails.application.routes.draw do
     resources :venues do
       resources :events
     end
-    resources :artists
-    resources :artists_events
+    resources :artists do
+      resources :artist_events
+    end
   end
 end

@@ -1,0 +1,9 @@
+<%= form_for [:admin, @artist, @artist_event] do |f| %>
+
+<select name='event_id'>
+  <% @events.each do |event| %>
+  <option value='<%= event.id %>'><%= event.title %></option>
+  <% end %>
+</select>
+<%= f.submit %>
+<% end %>
