@@ -1,0 +1,9 @@
+<h1>All Artists</h1>
+
+<section>
+<% @artists.each do |artist| %>
+<%= link_to "#{artist.name}", artist_path(artist) %>
+<% end %>
+</section>
+
+<%= link_to "Add a new artist", new_admin_artist_path %>

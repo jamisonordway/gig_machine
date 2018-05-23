@@ -7,7 +7,7 @@ describe 'Visitor' do
       password = 'keepthefear'
       user = User.create!(username: username, password: password)
       visit '/'
-      
+
       click_on 'Log in'
       expect(current_path).to eq(login_path)
 

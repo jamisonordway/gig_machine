@@ -11,6 +11,7 @@ describe 'Visitor' do
       fill_in :user_username, with: username
       fill_in :user_password, with: 'ilovechickennuggets'
       click_on 'Create User'
+      
       expect(current_path).to eq(user_path(User.last))
       expect(page).to have_content("Welcome, #{username}!")
       expect(page).to have_link('Log out')

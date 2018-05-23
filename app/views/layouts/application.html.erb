@@ -14,7 +14,15 @@
     <header>
     <nav>
       <%= link_to 'Dashboard', dashboard_index_path %>
-      <%= link_to 'All Venues', venues_path %>
+
+      <% if current_user && current_user.admin?  %>
+
+        <%= link_to 'All Venues', admin_venues_path %>
+      <% else %>
+
+        <%= link_to 'All Venues', venues_path %>
+      <% end %>
+      
       <%= link_to 'All Events', events_path %>
       <%= link_to 'All Artists', artists_path %>
     </nav>
