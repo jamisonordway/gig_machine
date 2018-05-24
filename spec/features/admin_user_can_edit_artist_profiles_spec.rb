@@ -21,7 +21,7 @@ describe 'User visits the artist show page' do
       fill_in 'Img', with: 'https://previews.123rf.com/images/vladacanon9/vladacanon90804/vladacanon9080400126/2852705-details-funny-doctor-examine-a-globe-with-stethoscope.jpg'
       fill_in 'artist_user_id', with: user.id
       click_on 'Update Artist'
-      save_and_open_page
+      
       expect(current_path).to eq(artist_path(artist))
       expect(page).to have_content("Cole's Burrito")
       expect(page).to have_content("burrito@turing.com")

@@ -5,6 +5,7 @@
   <p> Venue: <%= @event.venue.name %></p>
 
   <% @event_artists.each do |event_artist| %>
-    <h1>Featured Artists: <%= link_to "#{event_artist.name}" %></h2>
+  binding.pry
+    <h1>Featured Artists: <%= link_to "#{event_artist.name}", artist_path(@event_artists.artist.id) %></h2>
   <% end  %>
 </section>
