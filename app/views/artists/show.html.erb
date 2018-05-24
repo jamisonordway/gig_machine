@@ -1,8 +1,8 @@
 <h1><%= @artist.name %></h1>
 <section>
+  <img src="<%= @artist.img %>">"
   <%= @artist.bio %>
   <%= @artist.link %>
-  <%= @artist.img %>
 </section>
 
 <% if current_user && current_user.id == @artist.user_id %>
