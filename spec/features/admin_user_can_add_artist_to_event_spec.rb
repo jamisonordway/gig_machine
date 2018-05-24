@@ -33,7 +33,7 @@ describe 'Logged in Admin' do
       expect(page).to have_link("#{artist.name}")
 
       click_on "#{artist.name}"
-      binding.pry
+      #binding.pry
       expect(current_path).to eq(artist_path(artist))
     end
   end
