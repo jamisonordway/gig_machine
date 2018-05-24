@@ -37,4 +37,21 @@ describe 'Logged in Admin' do
       expect(current_path).to eq(artist_path(artist))
     end
   end
+  context 'they delete artist from an event' do
+    it 'should remove artist from the event' do
+    admin = User.create(username: 'dirtycomputer', password: 'pynk', role: 1)
+    venue = Venue.create!(name: 'red rocks', location: 'here', email: 'someone@rr.com')
+    event = Event.create!(title: 'thing', description: 'thing', date: '01/01/01', venue_id: venue.id)
+    event_2 = Event.create(title: 'other thing', description: 'hello world', date: '03/03/03', venue_id: venue.id)
+    artist = Artist.create(name: 'Gojira', bio: 'black honey', link: 'gojira.listen', img: 'img', user_id: 666)
+    event_artist = ArtistsEvent.create(artist_id: artist.id, event_id: event.id)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+    visit event_path(event)
+  
+    click_on "Remove #{artist.name} from this event"
+    expect(current_path).to eq(event_path(event))
+    expect(page).to_not have_content("#{artist.name}")
+  end
+  end
 end

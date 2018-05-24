@@ -30,6 +30,10 @@ class Admin::EventsController < Admin::BaseController
     end
   end
 
+  def destroy
+    
+  end
+
   private
 
   def event_params

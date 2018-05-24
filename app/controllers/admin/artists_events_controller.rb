@@ -21,6 +21,13 @@ class Admin::ArtistsEventsController < Admin::BaseController
     @artist_events = ArtistEvent.all
   end
 
+  def destroy
+    event = Event.find(params[:id])
+    artists_event = ArtistsEvent.find(params[:id])
+    artists_event.destroy
+    redirect_to event_path(event)
+  end
+
   private
 
   def artist_event_params

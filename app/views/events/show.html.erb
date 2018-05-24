@@ -5,7 +5,12 @@
   <p> Venue: <%= @event.venue.name %></p>
 
   <% @event_artists.each do |event_artist| %>
-  binding.pry
     <h1>Featured Artists: <%= link_to "#{event_artist.name}", artist_path(@event_artists.ids) %></h2>
   <% end  %>
+
+  <% if current_admin? %>
+  <% @event_artists.each do |event_artist| %>
+    <h1><%= link_to "Remove #{event_artist.name} from this event", admin_artist_artists_event_path(@event_artists.ids), method: :delete %></h1>
+    <% end %>
+    <% end %>
 </section>
