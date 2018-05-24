@@ -26,6 +26,7 @@ body {
   font-family: 'Wire One', sans-serif;
   grid-template-columns: 1 / 5;
   grid-template-rows: 1 / 2;
+  font-size: 50px;
 }
 
 header {
@@ -58,5 +59,9 @@ section {
   grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 2;
-  
+
+}
+
+p {
+  font-size: 30px;
 }
