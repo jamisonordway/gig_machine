@@ -11,7 +11,6 @@ class Admin::ArtistsEventsController < Admin::BaseController
     event = Event.find(params[:event_id])
     artists_events = ArtistsEvent.new({artist: artist, event: event})
     if artists_events.save
-
       redirect_to event_path(event.id)
     else
       render :new
