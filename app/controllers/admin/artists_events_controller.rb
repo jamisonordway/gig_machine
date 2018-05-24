@@ -23,8 +23,7 @@ class Admin::ArtistsEventsController < Admin::BaseController
 
   def destroy
     event = Event.find(params[:id])
-    artists_event = ArtistsEvent.find(params[:id])
-    artists_event.destroy
+    artists_event = ArtistsEvent.destroy(params[:id])
     redirect_to event_path(event)
   end
 
