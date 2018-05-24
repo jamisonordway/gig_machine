@@ -9,5 +9,4 @@ class EventsController < ApplicationController
     @event_artists = @event.artists
   end
 
-
 end

@@ -27,6 +27,7 @@ describe 'Logged in Admin' do
       select "#{event.title}", from: :event_id, visible: false
       click_on "Add to Event"
       expect(current_path).to eq(event_path(event))
+
       expect(page).to have_content("Featured Artists: #{artist.name}")
       expect(page).to have_link("#{artist.name}")
     end
