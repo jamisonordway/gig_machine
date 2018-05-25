@@ -10,7 +10,7 @@
 
   <% if current_admin? %>
   <% @event_artists.each do |event_artist| %>
-    <h1><%= link_to "Remove #{event_artist.name} from this event", admin_artist_artists_event_path(@event_artists.ids), method: :delete %></h1>
+    <h1><%= link_to "Remove #{event_artist.name} from this event", admin_artist_artists_event_path(event_artist.id), method: :delete %></h1>
     <% end %>
     <% end %>
 </section>
