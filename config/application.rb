@@ -17,6 +17,12 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+GigMachine::Application.configure do
+  config.sass.preferred_syntax = :sass
+  config.sass.line_comments = false
+  config.sass.cache = false
+end
+
 module GigMachine
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.

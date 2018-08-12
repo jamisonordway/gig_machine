@@ -1,67 +1,82 @@
-* {
-  box-sizing: border-box;
-}
-
-a:link {
-  text-decoration: none;
-  color: #E0ECF7;
-}
-
-a:visited {
-  text-decoration: none;
-  color: #E0ECF7;
-}
-
-a:hover {
-  color: white;
-}
-
-a:active {
-  text-decoration: underline;
-}
 
 body {
-  margin: 0;
-  background-color: #55466A;
-  font-family: 'Wire One', sans-serif;
-  grid-template-columns: 1 / 5;
-  grid-template-rows: 1 / 2;
-  font-size: 50px;
+  background-color: #B7BABB;
 }
-
-header {
-  display: flex;
-  justify-content: space-between;
-  background-color: #28162E;
-  width: 100%;
-  height: 25vh;
-  align-items: center;
-  font-family: 'Playball', cursive;
-  font-size: 25px;
-}
-
 
 nav {
-  display: flex;
-  width: 40%;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: baseline;
+  background-color: #25292E;
+  padding: 1em;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 5px 5px 5px black;
+}
+
+nav a {
+  display: block;
+  text-align: center;
+  float: left;
+  padding: 1em;
+  font-family: Roboto;
+  color: #8D8D8D;
+  text-decoration: none;
 }
 
 .right-align {
+  display: flex;
   justify-content: flex-end;
-  padding-right: 2rem;
 }
 
-section {
-  grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 2;
-
+body {
+  color: #FFFFFF;
+  font-family: Montserrat;
+  background-image: url("connectwork.png");
+  background-repeat: repeat;
 }
 
-p {
-  font-size: 30px;
+body a:link {
+  color: #FFFF;
 }
+
+body a:visited {
+  color:#8D8D8D;
+}
+
+body a:hover {
+  color: #B2E248;
+}
+body a:active {
+  color:#FFFFFF;
+}
+
+body h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 4em;
+  padding-top: 1em;
+  color: #B2E248;
+}
+
+body p {
+  display: flex;
+  font-size: 1.1em;
+  justify-content: center;
+  text-align: center;
+}
+
+body a {
+  display: flex;
+  font-size: 1.1em;
+  justify-content: center;
+  text-align: center;
+}
+
+.event-card {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 40%;
+  margin-right: 40%;
+  padding: .5em;
+  border: solid 1px #25292E;
+  background-color: #5D5D5D;
+}
+/* Background pattern from Toptal Subtle Patterns */

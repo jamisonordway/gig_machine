@@ -1,7 +1,9 @@
-<h1>All Events</h1>
+<h1>ALL EVENTS</h1>
 
 <section>
   <% @events.each do |event| %>
-  <%= link_to "#{event.title}", event_path(event)%>
+  <div class="event-card">
+  <p><%= link_to "#{event.title}", event_path(event)%></p>
+  </div>
   <% end %>
 </section>
