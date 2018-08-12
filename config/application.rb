@@ -16,12 +16,7 @@ require "sprockets/railtie"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-
-GigMachine::Application.configure do
-  config.sass.preferred_syntax = :sass
-  config.sass.line_comments = false
-  config.sass.cache = false
-end
+require 'sprockets/railtie'
 
 module GigMachine
   class Application < Rails::Application
