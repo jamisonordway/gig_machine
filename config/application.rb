@@ -17,7 +17,7 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 require 'sprockets/railtie'
-
+config.serve_static_assets = true
 module GigMachine
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
