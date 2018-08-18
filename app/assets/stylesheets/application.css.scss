@@ -5,9 +5,10 @@ body {
 
 nav {
   background-color: #25292E;
-  padding: 1em;
+  /* padding: 1em; */
   overflow: hidden;
-  width: 100%;
+  margin-left: -.5em;
+  width: 101.2%;
   box-shadow: 5px 5px 5px black;
 }
 
@@ -29,7 +30,7 @@ nav a {
 body {
   color: #FFFFFF;
   font-family: Montserrat;
-  background-image: url("connectwork.png");
+  background-image: image-url("connectwork.png");
   background-repeat: repeat;
 }
 
