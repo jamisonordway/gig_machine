@@ -1,6 +1,5 @@
 class Admin::ArtistsController < Admin::BaseController
 
-
   def index
     @artists = Artist.all
   end
