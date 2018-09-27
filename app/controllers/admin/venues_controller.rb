@@ -1,6 +1,5 @@
 class Admin::VenuesController < Admin::BaseController
 
-
   def index
     @venues = Venue.all
   end
