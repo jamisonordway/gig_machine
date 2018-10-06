@@ -8,13 +8,14 @@ describe 'Visitor' do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(artist_user)
 
-      visit (new_admin_artist_transfer_path(artist))
+      visit (new_artist_transfer_path(artist))
+      # save_and_open_page
       # click_on 'Upload content'
       # expect(current_path).to eq(new_admin_artist_transfer_path)
 
       # click_on 'Submit'
 
-      expect(current_path).to eq(admin_artist_transfers_path(artist))
+      expect(page).to have_content("Upload a song or performance!")
     end
   end
 end

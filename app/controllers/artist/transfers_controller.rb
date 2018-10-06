@@ -1,4 +1,4 @@
-class Admin::TransfersController < Admin::BaseController
+class TransfersController < ApplicationController
 
   def new
     client = WeTransfer::Client.new(api_key: ENV.fetch('WT_API_KEY'))
