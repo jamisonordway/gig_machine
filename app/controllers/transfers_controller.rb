@@ -1,5 +1,7 @@
-class TransfersController < ApplicationController
 
+class TransfersController < ApplicationController
+  require 'we_transfer_client'
+  
   def new
     client = WeTransfer::Client.new(api_key: ENV.fetch('WT_API_KEY'))
     transfer = client.create_transfer_and_upload_files(message: 'Performances') do |upload|
