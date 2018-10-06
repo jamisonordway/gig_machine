@@ -9,18 +9,19 @@ Rails.application.routes.draw do
   resources :events, only: [:index, :show]
   resources :users, only: [:new, :show, :index, :create]
   resources :artists, only: [:index, :show, :edit, :update]
-  resources :transfers
-
+  
   resources :venues, only: [:index, :show] do
     resources :events, only: [:index, :show]
   end
-
+  
   namespace :admin do
     resources :venues do
       resources :events
+      # resources :transfers
     end
     resources :artists do
       resources :artists_events
+      resources :transfers
     end
   end
 end
