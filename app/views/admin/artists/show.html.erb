@@ -1,0 +1,11 @@
+<h1><%= @artist.name %></h1>
+<section>
+<p><%= @artist.bio %></p>
+<p><%= @artist.link %></p>
+<p><%= @artist.img %></p>
+</section>
+
+<% if current_admin? %>
+<p><%=link_to "Edit #{@artist.name}", edit_admin_artist_path(@artist) %></p>
+<p><%= link_to "Add #{@artist.name} to an event", new_admin_artist_artists_event_path(@artist) %>
+  <% end %>

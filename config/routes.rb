@@ -8,7 +8,18 @@ Rails.application.routes.draw do
   resources :dashboard, only: :index
   resources :events, only: [:index, :show]
   resources :users, only: [:new, :show, :index, :create]
-  resources :venues do
-    resources :events
+  resources :artists, only: [:index, :show, :edit, :update]
+
+  resources :venues, only: [:index, :show] do
+    resources :events, only: [:index, :show]
+  end
+
+  namespace :admin do
+    resources :venues do
+      resources :events
+    end
+    resources :artists do
+      resources :artists_events
+    end
   end
 end

@@ -4,20 +4,41 @@
     <title>GigMachine</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <%= link_to 'Dashboard', dashboard_index_path %>
-    <%= link_to 'All Venues', venues_path %>
-    <%= link_to 'All Events', events_path %>
-    <% if current_user %>
-    <%= link_to 'Log out', logout_path %>
-    <% else %>
-    <%= link_to 'Log in', login_path %>
-    <% end %>
   </head>
 
   <body>
+    <header>
+    <nav>
+      <%= link_to 'DASHBOARD', dashboard_index_path %>
+
+      <% if current_admin?  %>
+        <%= link_to 'VENUES', admin_venues_path %>
+      <% else %>
+        <%= link_to 'VENUES', venues_path %>
+      <% end %>
+
+
+        <%= link_to 'EVENTS', events_path %>
+
+      <% if current_admin? %>
+        <%= link_to 'ARTISTS', admin_artists_path %>
+      <% else %>
+        <%= link_to 'ARTISTS', artists_path %>
+      <% end %>
+
+      <aside class='right-align'>
+        <% if current_user %>
+        <%= link_to 'Log out', logout_path %>
+        <% else %>
+        <%= link_to 'Log in', login_path %>
+        <% end %>
+      </aside>
+    </nav>
+    </header>
     <%= yield %>
   </body>
 </html>

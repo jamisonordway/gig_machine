@@ -1,0 +1,11 @@
+<h1><%= @venue.name %></h1>
+
+<section>
+  <%= @venue.location %><br>
+  <% @venue.email %>
+</section>
+
+
+  <% if current_user && current_user.admin? %>
+  <%= link_to "Add a new event for #{@venue.name}", new_admin_venue_event_path(@venue) %>
+  <% end %>

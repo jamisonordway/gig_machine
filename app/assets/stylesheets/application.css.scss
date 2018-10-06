@@ -1,0 +1,84 @@
+
+body {
+  background-color: #B7BABB;
+}
+
+nav {
+  background-color: #25292E;
+  /* padding: 1em; */
+  overflow: hidden;
+  margin-left: -.5em;
+  width: 101.2%;
+  box-shadow: 5px 5px 5px black;
+}
+
+nav a {
+  display: block;
+  text-align: center;
+  float: left;
+  padding: 1em;
+  padding-top: .5em;
+  font-family: Roboto;
+  color: #8D8D8D;
+  text-decoration: none;
+}
+
+.right-align {
+  display: flex;
+  justify-content: flex-end;
+}
+
+body {
+  color: #FFFFFF;
+  font-family: Montserrat;
+  background-image: asset-data-url("connectwork.png");
+  background-repeat: repeat;
+}
+
+body a:link {
+  color: #FFFF;
+}
+
+body a:visited {
+  color:#8D8D8D;
+}
+
+body a:hover {
+  color: #B2E248;
+}
+body a:active {
+  color:#FFFFFF;
+}
+
+body h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 4em;
+  padding-top: 1em;
+  color: #B2E248;
+}
+
+body p {
+  display: flex;
+  font-size: 1.1em;
+  justify-content: center;
+  text-align: center;
+}
+
+body a {
+  display: flex;
+  font-size: 1.1em;
+  justify-content: center;
+  text-align: center;
+}
+
+.event-card {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 40%;
+  margin-right: 40%;
+  padding: .5em;
+  border: solid 1px #25292E;
+  background-color: #5D5D5D;
+}
+/* Background pattern from Toptal Subtle Patterns */

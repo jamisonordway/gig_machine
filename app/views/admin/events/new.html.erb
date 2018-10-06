@@ -1,6 +1,7 @@
-<h1><%= "Edit #{@event.title}" %></h1>
+<h1>Create a new event for <%= @venue.name %></h1>
 
-<%= form_for [@venue, @event] do |f| %>
+<section>
+<%= form_for [:admin, @venue, @event] do |f| %>
 <%= f.label :title %>
 <%= f.text_field :title %>
 <%= f.label :description %>
@@ -9,3 +10,4 @@
 <%= f.text_field :date %>
 <%= f.submit %>
 <% end %>
+</section>

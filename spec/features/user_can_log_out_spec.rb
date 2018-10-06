@@ -13,7 +13,7 @@ describe 'Visitor' do
       fill_in :username, with: username
       fill_in :password, with: password
       click_on 'Log In'
-    
+
       expect(current_path).to eq(user_path(user))
       expect(page).to have_link('Log out')
 

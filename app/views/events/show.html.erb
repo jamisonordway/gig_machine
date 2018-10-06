@@ -1,3 +1,16 @@
-<%= @event.title %>
-<%= @event.description %>
-<%= @event.date %>
+<h1><%= @event.title %></h1><br>
+<section>
+  <%= @event.description %><br>
+  <%= @event.date %>
+  <p> Venue: <%= @event.venue.name %></p>
+
+  <% @event_artists.each do |event_artist| %>
+    <h1>Featured Artists: <%= link_to "#{event_artist.name}", artist_path(@event_artists.ids) %></h2>
+  <% end  %>
+
+  <% if current_admin? %>
+  <% @event_artists.each do |event_artist| %>
+    <h1><%= link_to "Remove #{event_artist.name} from this event", admin_artist_artists_event_path(event_artist.id), method: :delete %></h1>
+    <% end %>
+    <% end %>
+</section>
