@@ -1,5 +1,9 @@
 # Gig Machine
 
+Note: the Gig Machine is currently under construction. Check back often for awesome updates, and check out the open issues
+
+if you're interested in contributing.
+
 This application is designed to connect venue owners with artists and musicians. In future iterations, genres and locations
 
 will be factored into search results!
