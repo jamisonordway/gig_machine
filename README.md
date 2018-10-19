@@ -1,8 +1,8 @@
 # Gig Machine
 
-Note: the Gig Machine is currently under construction. Check back often for awesome updates, and check out the open issues
+Note: the Gig Machine is currently under construction. Check back often for awesome updates, and check out the open 
 
-if you're interested in contributing.
+issues if you're interested in contributing.
 
 This application is designed to connect venue owners with artists and musicians. In future iterations, genres and locations
 
