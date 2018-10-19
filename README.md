@@ -1,24 +1,19 @@
-# README
+# Gig Machine
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is designed to connect venue owners with artists and musicians. In future iterations, genres and locations
 
-Things you may want to cover:
+will be factored into search results!
 
-* Ruby version
+### Tech stack:
 
-* System dependencies
+Ruby `2.4.1`
 
-* Configuration
+Rails `5.2.0`
 
-* Database creation
+### Using and Contributing:
 
-* Database initialization
+fork and clone repo and run `bundle install`
 
-* How to run the test suite
+run tests with `rspec`
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Feel free to submit feature requests or bug fixes with a PR!
