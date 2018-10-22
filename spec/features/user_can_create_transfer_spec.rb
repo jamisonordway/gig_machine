@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Visitor' do
   context 'uploads a transfer' do
-    it 'should create a transfer of file successfully' do
+    xit 'should create a transfer of file successfully' do
       artist_user = User.create(username: 'jamison', password: 'mythos', role: 0)
       artist = Artist.create(name: 'jamison.', bio: 'sapphic electropop', link: 'someday@website.com', img: 'img', user_id: 1)
 
