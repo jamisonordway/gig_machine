@@ -15,8 +15,8 @@ describe 'Visitor' do
 
 
 
-    expect(page).to have_content("Welcome to the Gig Machine!")
-    expect(page).to have_link('Click here to see all venues')
-    expect(page).to have_link('Click here to see all events')
+    expect(page).to have_content("WELCOME TO THE GIG MACHINE")
+    expect(page).to have_link('VENUES')
+    expect(page).to have_link('EVENTS')
   end
 end

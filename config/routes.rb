@@ -9,11 +9,15 @@ Rails.application.routes.draw do
   resources :events, only: [:index, :show]
   resources :users, only: [:new, :show, :index, :create]
   resources :artists, only: [:index, :show, :edit, :update]
-
+  
+  resources :artists do
+    resources :transfers
+  end
+  
   resources :venues, only: [:index, :show] do
     resources :events, only: [:index, :show]
   end
-
+  
   namespace :admin do
     resources :venues do
       resources :events

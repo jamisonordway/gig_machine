@@ -1,0 +1,8 @@
+---
+applications:
+- name: gig-machine
+  memory: 1G
+  random-route: false
+  command: bundle exec rake db:migrate
+  command: null
+
